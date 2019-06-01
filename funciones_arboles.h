@@ -23,7 +23,10 @@ void pause( )
 }
 
 
-/** MUESTRA EL MANÚ PRINCIPAL DEL PROGRAMA*/
+/** 
+*	MUESTRA EL MANÚ PRINCIPAL DEL PROGRAMA
+*	PARA CUMPLIR CON LAS CONSIGNAS DEL TP.
+*/
 void mostrar_menu_arboles( )
 {
     printf( "\nELIJA UNA OPCION" );
@@ -42,10 +45,10 @@ void mostrar_menu_arboles( )
 /** DETERMINA SI UN STRING ES NUMÉRICO */
 int isNumero( char * st )
 {
-	int len = strlen( st );
+	int len = strlen( st );//obtiene el largo del string
 
     for ( int i = 0; i < len; i++ ) {
-        if ( int( st[i] )<48 || int( st[i] ) > 57 ) {
+        if ( int( st[i] )< 48 || int( st[i] ) > 57 ) {//verifica si alguno de los caracteres del string no es un número de la tabla ASCII
             return FALSE;
         }
     }
@@ -82,7 +85,6 @@ void cargarArbol( Arbol *arbol )
 
 	clrscr( );
 	printf( "\nFINALIZO LA CARGA DEL %cRBOL. SE CARGARON %d ELEMENTO/S\n", acento_A, i );
-	printf( "\nLA ALTURA DE ARBOL ES: %d\n", AlturaArbol( *arbol, &altura_arbol ));
 }
 
 
@@ -105,7 +107,6 @@ void eliminarElemento( Arbol *arbol )
 
 	printf("\n%cRBOL RESULTANTE: " );
 	InOrden( *arbol, Mostrar );
-
 	printf("\n\n" );
 }
 
@@ -456,74 +457,6 @@ int Buscar( Arbol arbol, int dato )
 
 
 
-/** CALCULAR LA ALTURA DEL NODO QUE CONTIENE EL DATO dato */
-int Altura( Arbol arbol, int dato )
-{
-   int altura = 0;
-   pNodo actual = arbol;
-
-   // Todavía puede aparecer, ya que quedan nodos por mirar
-   while( !Vacio( actual ) ) {
-      if( dato == actual->dato ) return altura; // encontrado: devolver altura
-      else {
-         altura++; // Incrementamos la altura, seguimos buscando
-         if( dato < actual->dato ) actual = actual->izquierdo;
-         else if( dato > actual->dato ) actual = actual->derecho;
-      }
-   }
-   return -1; // No está en árbol, devolver -1
-}
-
-
-
-/** CONTAR EL NÚMERO DE NODOS */
-int NumeroNodos( Arbol arbol, int *contador )
-{
-   *contador = 0;
-
-   auxContador( arbol, contador ); // Función auxiliar
-   return *contador;
-}
-
-
-
-/** FUNCIÓN AUXILIAR PARA CONTAR NODOS. FUNCIÓN RECURSIVA DE RECORRIDO EN
-   PREORDEN, EL PROCESO ES AUMENTAR EL CONTADOR */
-void auxContador( Arbol nodo, int *c )
-{
-   ( *c )++; // incrementar contador
-   // Continuar recorrido
-   if( nodo->izquierdo ) auxContador( nodo->izquierdo, c );
-   if( nodo->derecho )   auxContador( nodo->derecho, c );
-}
-
-
-
-/** CALCULAR LA ALTURA DEL ÁRBOL, QUE ES LA ALTURA DEL NODO DE MAYOR ALTURA. */
-int AlturaArbol( Arbol arbol, int *altura )
-{
-   *altura = 0;
-
-   auxAltura( arbol, 0, altura ); // Función auxiliar
-   return *altura;
-}
-
-
-
-/** FUNCIÓN AUXILIAR PARA CALCULAR ALTURA. FUNCIÓN RECURSIVA DE RECORRIDO EN
-   POSTORDEN, EL PROCESO ES ACTUALIZAR LA ALTURA SÓLO EN NODOS HOJAS DE MAYOR
-   ALTURA DE LA MÁXIMA ACTUAL */
-void auxAltura( pNodo nodo, int alt, int *altura )
-{
-   // Recorrido postorden
-   if( nodo->izquierdo ) auxAltura( nodo->izquierdo, alt+1, altura );
-   if( nodo->derecho )   auxAltura( nodo->derecho, alt+1, altura );
-   // Proceso, si es un nodo hoja, y su altura es mayor que la actual del árbol, actualizamos la altura actual del árbol
-   if( EsHoja( nodo ) && alt > *altura ) *altura = alt;
-}
-
-
-
 /** COMPROBAR SI UN ÁRBOL ES VACÍO */
 int Vacio( Arbol nodo )
 {
@@ -540,7 +473,7 @@ int EsHoja( pNodo nodo )
 
 
 
-/** FUNCIÓN DE PRUEBA PARA RECORRIDOS DEL ÁRBOL */
+/** FUNCIÓN PARA RECORRIDOS DEL ÁRBOL */
 void Mostrar( int *d )
 {
    printf( "%d, ", *d );

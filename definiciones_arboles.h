@@ -59,12 +59,6 @@ int EsHoja(pNodo r);
 /* Contar número de nodos: */
 int NumeroNodos(Arbol a, int* c);
 
-/* Calcular la altura de un árbol: */
-int AlturaArbol(Arbol a, int* altura);
-
-/* Calcular altura de un dato: */
-int Altura(Arbol a, int dat);
-
 /* Aplicar una función a cada elemento del árbol: */
 void InOrden(Arbol, void (*func)(int*));
 void PreOrden(Arbol, void (*func)(int*));
@@ -80,5 +74,5 @@ void RDD(Arbol *raiz, pNodo nodo);
 /* Funciones auxiliares: */
 void Podar(Arbol *a);
 void auxContador(Arbol a, int*);
-void auxAltura(Arbol a, int, int*);
 void Mostrar(int *d);
+int isNumero( char * st );

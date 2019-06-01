@@ -76,16 +76,6 @@ int main(){
 					Buscar( ArbolInt, dato );
                 break;
 
-            case 7: //OPCION 7 INFORMACIÓN DEL ÁRBOL
-            	clrscr();
-				printf( "\n\nINIFORMACI%cN DEL %aRBOL\n", acento_O, acento_A );
-				printf("\n------------------------------------------------");
-				printf( "\nAltura del %crbol: %d\n", acento_a, altura_arbol );
-				printf( "\nN%cmero de nodos: %d\n", acento_u, NumeroNodos( ArbolInt, &nro_nodos_arbol ) );
-				printf("\n\n");
-
-                break;
-
             default:
                 clrscr();
                 printf("\n\nFIN DEL PROGRAMA\n");
