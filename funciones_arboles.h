@@ -36,7 +36,6 @@ void mostrar_menu_arboles( )
 	printf( "\n\t4.RECORRER EL %cRBOL IN-ORDER", acento_A );
 	printf( "\n\t5.RECORRER EL %cRBOL POST-ORDER", acento_A );
 	printf( "\n\t6.BUSCAR UN ELEMENTO", acento_O );
-	printf( "\n\t7.INFORMACI%cN DEL %cRBOL", acento_O, acento_A );
     printf( "\n\t0.SALIR" );
 }
 
@@ -105,7 +104,7 @@ void eliminarElemento( Arbol *arbol )
 	printf("\nSE VA A ELIMINAR EL ELEMENTO %d: \n", dato );
 	Borrar( arbol, dato );
 
-	printf("\n%cRBOL RESULTANTE: " );
+	printf("\n%cRBOL RESULTANTE: ", acento_A );
 	InOrden( *arbol, Mostrar );
 	printf("\n\n" );
 }

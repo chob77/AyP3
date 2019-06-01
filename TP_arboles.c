@@ -82,5 +82,4 @@ int main(){
                 break;
         }
     }while( opcion !=0 );
-	//pause();
 }
