@@ -1,8 +1,12 @@
 /*
- * TP_arboles.c
+ * MATERIA: ALGORITMOS Y PROGRAMACIÓN 3
+ * UNTREF 2019.
  *
- *  Created on: 26 may. 2019
- *      Author: chob
+ * TRABAJO PRÁCTICO: ÁRBOLES BINARIOS DE BÚSQUEDA.
+ * FILE: TP_arboles.c
+ *
+ *  CREATED ON: 26 may. 2019
+ *      AUTHOR: chob
  */
 
 
@@ -71,9 +75,13 @@ int main(){
 					printf("\nBUSCAR UN ELEMENTO EN EL %cRBOL: ", acento_A );
 					printf( "\n---------------------------------------" );
 					printf("\n\nINGRESA EL ELEMENTO A BUSCAR: " );
-					scanf( "%d", dato );
+					scanf( "%d", &dato );
 
-					Buscar( ArbolInt, dato );
+					printf("\nSE VA BUSCAR EL ELEMENTO: %d\n", dato );
+
+					if ( Buscar( ArbolInt, dato ) ) printf("\nEL ELEMENTO INGRESADO EXISTE EN EL %cRBOL.", acento_A);
+					else printf("\nEL ELEMENTO INGRESADO NO EXISTE EN EL %cRBOL.", acento_A);
+					printf("\n\n");
                 break;
 
             default:

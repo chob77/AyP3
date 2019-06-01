@@ -1,8 +1,12 @@
 /*
- * funcioines_arboles.c
+ * MATERIA: ALGORITMOS Y PROGRAMACIÓN 3
+ * UNTREF 2019. 
  *
- *  Created on: 26 may. 2019
- *      Author: chob
+ * TRABAJO PRÁCTICO: ÁRBOLES BINARIOS DE BÚSQUEDA.
+ * FILE: funcioines_arboles.c
+ *
+ *  CREATED ON: 26 may. 2019
+ *      AUTHOR: chob
  */
 
 #include <stdlib.h>
@@ -181,13 +185,13 @@ void Equilibrar( Arbol *arbol, pNodo nodo, int rama, int nuevo )
 
 	  if( nodo->Fac_equ == 0 ) salir = TRUE; // La altura de las rama que empieza en nodo no ha variado, salir de Equilibrar
 
-      else if( nodo->Fac_equ == -2 ) { // Rotar a derechas y salir:
+      else if( nodo->Fac_equ == -2 ) { // Rotar a derecha y salir:
 		 if( nodo->izquierdo->Fac_equ == 1 ) RDD( arbol, nodo ); // Rotación doble
          else RSD( arbol, nodo );                         // Rotación simple
          salir = TRUE;
       }
 
-      else if( nodo->Fac_equ == 2 ) {  // Rotar a izquierdas y salir:
+      else if( nodo->Fac_equ == 2 ) {  // Rotar a izquierda y salir:
          if( nodo->derecho->Fac_equ == -1 ) RDI( arbol, nodo ); // Rotación doble
          else RSI( arbol, nodo );                        // Rotación simple
          salir = TRUE;
@@ -196,13 +200,13 @@ void Equilibrar( Arbol *arbol, pNodo nodo, int rama, int nuevo )
 	  if( nodo->padre )
          if( nodo->padre->derecho == nodo ) rama = DERECHO; else rama = IZQUIERDO;
 
-	  nodo = nodo->padre; // Calcular Fac_equ, siguiente nodo del camino.
+	  nodo = nodo->padre; //Calcular Fac_equ, siguiente nodo del camino.
    }
 }
 
 
 
-/** ROTACIÓN DOBLE A DERECHAS */
+/** ROTACIÓN DOBLE A LA DERECHA */
 void RDD( Arbol *raiz, Arbol nodo )
 {
    pNodo Padre = nodo->padre;
@@ -240,7 +244,7 @@ void RDD( Arbol *raiz, Arbol nodo )
 
 
 
-/** ROTACIÓN DOBLE A IZQUIERDAS */
+/** ROTACIÓN DOBLE A LA IZQUIERDA */
 void RDI( Arbol *arbol, pNodo nodo )
 {
    pNodo Padre = nodo->padre;
@@ -278,7 +282,7 @@ void RDI( Arbol *arbol, pNodo nodo )
 
 
 
-/** ROTACIÓN SIMPLE A DERECHAS */
+/** ROTACIÓN SIMPLE A LA DERECHA */
 void RSD( Arbol *arbol, pNodo nodo )
 {
    pNodo Padre = nodo->padre;
@@ -307,7 +311,7 @@ void RSD( Arbol *arbol, pNodo nodo )
 
 
 
-/** ROTACIÓN SIMPLE A IZQUIERDAS */
+/** ROTACIÓN SIMPLE A LA IZQUIERDA */
 void RSI( Arbol *arbol, pNodo nodo )
 {
    pNodo Padre = nodo->padre;
@@ -404,8 +408,8 @@ void Borrar( Arbol *arbol, int dato )
 
 
 
-/** RECORRIDO DE ÁRBOL EN INORDEN, APLICAMOS LA FUNCIÓN FUNC, QUE TIENE
-   EL PROTOTIPO: void func( int* );
+/** RECORRIDO DE ÁRBOL EN INORDEN, 
+	APLICAMOS LA FUNCIÓN FUNC, QUE TIENE EL PROTOTIPO: void func( int* );
 */
 void InOrden( Arbol arbol, void ( *func )( int* ) )
 {
@@ -416,8 +420,8 @@ void InOrden( Arbol arbol, void ( *func )( int* ) )
 
 
 
-/** RECORRIDO DE ÁRBOL EN PREORDEN, APLICAMOS LA FUNCIÓN FUNC, QUE TIENE
-   EL PROTOTIPO: void func( int* );
+/** RECORRIDO DE ÁRBOL EN PREORDEN, 
+	APLICAMOS LA FUNCIÓN FUNC, QUE TIENE EL PROTOTIPO: void func( int* );
 */
 void PreOrden( Arbol arbol, void ( *func )( int* ) )
 {
@@ -428,8 +432,8 @@ void PreOrden( Arbol arbol, void ( *func )( int* ) )
 
 
 
-/** RECORRIDO DE ÁRBOL EN POSTORDEN, APLICAMOS LA FUNCIÓN FUNC, QUE TIENE
-   EL PROTOTIPO: void func( int* );
+/** RECORRIDO DE ÁRBOL EN POSTORDEN, 
+	APLICAMOS LA FUNCIÓN FUNC, QUE TIENE EL PROTOTIPO: void func( int* );
 */
 void PostOrden( Arbol arbol, void ( *func )( int* ) )
 {
@@ -440,7 +444,7 @@ void PostOrden( Arbol arbol, void ( *func )( int* ) )
 
 
 
-/** Buscar un valor en el árbol */
+/** BUSCAR UN VALOR EN EL ÁRBOL */
 int Buscar( Arbol arbol, int dato )
 {
    pNodo actual = arbol;
