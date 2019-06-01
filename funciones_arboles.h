@@ -98,10 +98,12 @@ void eliminarElemento( Arbol *arbol )
 	printf("\nELEMENTOS DEL %cRBOL: ", acento_A );
 	InOrden( *arbol, Mostrar );
 	printf("\n\nINGRESA EL ELEMENTO A ELIMINAR DEL %cRBOL: ", acento_A );
-	scanf( "%d", dato );
+	scanf( "%d", &dato );
 
 	printf("\nSE VA A ELIMINAR EL ELEMENTO %d: \n", dato );
 	Borrar( arbol, dato );
+
+	printf("\n%cRBOL RESULTANTE: " );
 	InOrden( *arbol, Mostrar );
 
 	printf("\n\n" );
@@ -353,8 +355,7 @@ void Borrar( Arbol *arbol, int dato )
                else if( padre->izquierdo == actual ) padre->izquierdo = NULL;
             free( actual ); // Borrar el nodo
             actual = NULL;
-            /* El nodo padre del actual puede ser ahora un nodo hoja, por lo
-               tanto su Fac_equ es cero, pero debemos seguir el camino a partir de
+            /* El nodo padre del actual puede ser ahora un nodo hoja, por lo tanto su Fac_equ es cero, pero debemos seguir el camino a partir de
                su padre, si existe. */
             if( ( padre->derecho == actual && padre->Fac_equ == 1 ) ||
                ( padre->izquierdo == actual && padre->Fac_equ == -1 ) ) {

@@ -41,7 +41,7 @@ int main(){
             	break;
 
             case 2: //OPCION 2 ELIMINAR ELEMENTO
-            	eliminarElemento( &ArbolInt );	
+            	eliminarElemento( &ArbolInt );
             	break;
 
             case 3: //OPCION 3 RECORRER ÁRBOL PRE-ORDER
@@ -83,7 +83,7 @@ int main(){
 				printf( "\nAltura del %crbol: %d\n", acento_a, altura_arbol );
 				printf( "\nN%cmero de nodos: %d\n", acento_u, NumeroNodos( ArbolInt, &nro_nodos_arbol ) );
 				printf("\n\n");
-				
+
                 break;
 
             default:
